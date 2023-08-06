@@ -3,8 +3,10 @@ const mongoose = require("mongoose");
 const PORT = process.env.PORT || 3002;
 const moodRouter = require("./routes/moodRouter");
 require('dotenv').config();
+const cors = require('cors');
 
 const app = express();
+app.use(cors());
 
 app.use(express.json());
 
