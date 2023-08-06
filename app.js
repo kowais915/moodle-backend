@@ -1,6 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const PORT = process.env.PORT || 3002;
+const moodRouter = require("./routes/moodRouter");
 require('dotenv').config();
 
 const app = express();
@@ -24,3 +25,5 @@ app.get("/", (req, res)=>
     msg: "Welcome to the Moodle API"
   })
 )
+
+app.use("/api/moods", moodRouter )
